@@ -1,12 +1,12 @@
 import Switch from "../components/Switch";
 import SearchBar from "../components/SearchBar";
 
-export default function Navbar({ onSearch }) {
+export default function Navbar() {
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md dark:bg-gray-800">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">MetaBlog</h1>
-        <ul className="flex space-x-4">
+        <h1 className="text-xl font-bold dark:text-white">MetaBlog</h1>
+        <ul className="flex space-x-10">
           <li>
             <a href="/" className="text-gray-700 hover:text-blue-500">
               Home
@@ -32,11 +32,11 @@ export default function Navbar({ onSearch }) {
               Contact
             </a>
           </li>
-          <li>
-            <SearchBar onSearch={onSearch} />
-          </li>
         </ul>
-        <Switch />
+        <div className="flex items-center space-x-4">
+          <Switch />
+          <SearchBar />
+        </div>
       </div>
     </nav>
   );

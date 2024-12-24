@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { FiSearch } from "react-icons/fi"; // Büyüteç simgesi için
+import { FiSearch } from "react-icons/fi";
 
 export default function SearchBar() {
   const [query, setQuery] = useState("");
   const router = useRouter();
 
   const handleSearch = () => {
-    if (query.trim() === "") return; // Boş sorgu için işlem yapma
-    router.push(`/search?q=${encodeURIComponent(query)}`); // Arama sayfasına yönlendir
+    if (query.trim() === "") return;
+    router.push(`/search?q=${encodeURIComponent(query)}`);
   };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      handleSearch(); // Enter tuşu ile arama
+      handleSearch();
     }
   };
 
@@ -24,7 +24,7 @@ export default function SearchBar() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={handleKeyDown}
-        placeholder="Search articles..."
+        placeholder="Search"
         className="flex-grow bg-transparent outline-none text-gray-700 dark:text-white placeholder-gray-500"
       />
       <button
